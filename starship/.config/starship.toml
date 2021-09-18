@@ -1,7 +1,6 @@
 format = """
-[│](bold purple)$directory$package
-[│](bold purple)$git_branch$git_status
-[└─>](purple) """
+[│](bold purple)$directory$nodejs$golang$python$git_branch$git_status
+[└>](bold purple) """
 
 [directory]
 read_only = " "
@@ -11,9 +10,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-
-[memory_usage]
-symbol = " "
+format = '\[[$symbol$branch]($style)\]'
 
 [package]
 symbol = " "
@@ -21,11 +18,13 @@ format = '\[[$symbol$version]($style)\]'
 
 [python]
 symbol = " "
-format = '\[[$symbol$version]($style)\]'
+format = '[$symbol]($style)'
 
 [golang]
 symbol = " "
-format = '\[[$symbol$version]($style)\]'
+format = '[$symbol]($style)'
 
 [nodejs]
-format = '\[[$symbol$version]($style)\]'
+symbol = " "
+format = '[$symbol]($style)'
+detect_extensions = ["js", "mjs", "cjs", "ts", "tsx", "jsx"]
