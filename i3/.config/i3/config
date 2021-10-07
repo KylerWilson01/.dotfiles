@@ -303,24 +303,10 @@ exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 # Autotiling
 exec_always --no-startup-id autotiling
 
-#browser
-#exec --no-startup-id vivaldi-stable
-for_window [class="Vivaldi-stable"] focus
-
-#text-editor
-#exec --no-startup-id geany
-#exec --no-startup-id atom
-
-#file manager
-#exec --no-startup-id thunar
-
-#Mail clients
-#exec --no-startup-id evolution
-
-#Music
-#exec --no-startup-id spotify
 for_window [class="Spotify"] focus
 
+# MPV SERVER
+exec play-with-mpv
 
 # TRAY APPLICATIONS
 
