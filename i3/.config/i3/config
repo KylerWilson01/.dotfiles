@@ -28,7 +28,7 @@
 
 #set Super key
 set $mod Mod4
-set $meta Mod1+shift+control
+set $meh Mod1+shift+control
 set $hyper Mod1+shift+control+Mod4
 
 
@@ -102,51 +102,51 @@ set $secondMonitor DP-2
 set $thirdMonitor DP-1
 
 # workspace sets
-set $WS1 "1: WWW"
-set $WS2 "2: EDIT"
-set $WS3 "3: GAME"
-set $WS4 "4: CHAT"
-set $WS5 "5: VM"
-set $WS6 "6: EXT"
+set $WWW "1: WWW"
+set $TERMINAL "2: EDIT"
+set $DISCORD "3: DISCORD"
+set $GAME "4: GAME"
+set $VM "5: VM"
+set $SLACK "6: SLACK"
 set $WS7 "7: EXT"
 set $WS8 "8: EXT"
 set $WS9 "9: EXT"
-set $WS10 "10: EXT"
+set $MUSIC "10: MUSIC"
 
-workspace $WS1 output $firstMonitor
-workspace $WS2 output $firstMonitor
-workspace $WS3 output $firstMonitor
-workspace $WS4 output $secondMonitor
-workspace $WS5 output $secondMonitor
-workspace $WS6 output $secondMonitor
-workspace $WS7 output $thirdMonitor
-workspace $WS8 output $thirdMonitor
+workspace $WWW output $firstMonitor
+workspace $TERMINAL output $firstMonitor
+workspace $GAME output $firstMonitor
+workspace $DISCORD output $firstMonitor
+workspace $VM output $firstMonitor
+workspace $SLACK output $firstMonitor
+workspace $WS7 output $firstMonitor
+workspace $WS8 output $secondMonitor
 workspace $WS9 output $thirdMonitor
-workspace $WS10 output $firstMonitor
+workspace $MUSIC output $firstMonitor
 
 # switch to workspace
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
+bindsym $mod+1 workspace $WWW
+bindsym $mod+2 workspace $TERMINAL
+bindsym $mod+3 workspace $DISCORD
+bindsym $mod+4 workspace $GAME
+bindsym $mod+5 workspace $VM
+bindsym $mod+6 workspace $SLACK
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace $WS9
-bindsym $mod+0 workspace $WS10
+bindsym $mod+0 workspace $MUSIC
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1; workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2; workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3; workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4; workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5; workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6; workspace $WS6
+bindsym $mod+Shift+1 move container to workspace $WWW; workspace $WWW
+bindsym $mod+Shift+2 move container to workspace $TERMINAL; workspace $TERMINAL
+bindsym $mod+Shift+3 move container to workspace $GAME; workspace $GAME
+bindsym $mod+Shift+4 move container to workspace $DISCORD; workspace $DISCORD
+bindsym $mod+Shift+5 move container to workspace $VM; workspace $VM
+bindsym $mod+Shift+6 move container to workspace $SLACK; workspace $SLACK
 bindsym $mod+Shift+7 move container to workspace $WS7; workspace $WS7
 bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
-bindsym $mod+Shift+0 move container to workspace $WS10; workspace $WS10
+bindsym $mod+Shift+0 move container to workspace $MUSIC; workspace $MUSIC
 
 
 
@@ -272,22 +272,22 @@ font pango:Noto Mono Regular 13
 # you can find the class with the program xprop
 
 # Workspace 1 browser related
-for_window [class="firefox"]            move to workspace $WS1, focus
-for_window [class="Brave"]              move to workspace $WS1, focus
+for_window [class="firefox"]            move to workspace $WWW, focus
+for_window [class="Brave"]              move to workspace $WWW, focus
 
 # Workspace 2 code related
-for_window [class="Alacritty"]          move to workspace $WS2, focus
+for_window [class="Alacritty"]          move to workspace $TERMINAL, focus
 
 # Workspace 3 game related
-for_window [class="Steam"]              move to workspace $WS3, focus
-for_window [class="Lutris"]             move to workspace $WS3, focus
+for_window [class="Steam"]              move to workspace $GAME, focus
+for_window [class="Lutris"]             move to workspace $GAME, focus
 
 # Workspace 4 chat related
-for_window [class="discord|Discord"]            move to workspace $WS4, focus
-for_window [class="Slack"]              move to workspace $WS4, focus
+for_window [class="discord|Discord"]            move to workspace $DISCORD, focus
+for_window [class="Slack"]              move to workspace $SLACK, focus
 
 # Workspace 10 music related
-for_window [class="Spotify"]            move to workspace $WS10, focus
+for_window [class="Spotify"]            move to workspace $MUSIC, focus
 
 
 
@@ -379,11 +379,12 @@ bindsym $mod+Return exec --no-startup-id alacritty;focus
 bindsym control+mod1+k exec --no-startup-id arcolinux-logout
 bindsym control+mod1+l exec --no-startup-id arcolinux-logout
 
-bindsym control+mod1+f exec --no-startup-id firefox;focus
-bindsym control+mod1+g exec --no-startup-id brave;focus
+bindsym $meh+f exec --no-startup-id firefox;focus
+bindsym $meh+g exec --no-startup-id brave;focus
 bindsym control+Shift+s exec --no-startup-id steam;focus
-bindsym control+Shift+d exec --no-startup-id discord;focus
-bindsym mod1+Shift+l exec --no-startup-id lutris;focus
+bindsym $meh+d exec --no-startup-id discord;focus
+bindsym $meh+s exec --no-startup-id slack;focus
+bindsym $hyper+l exec --no-startup-id lutris;focus
 
 #workspace 4 related
 bindsym $mod+F4 exec --no-startup-id gimp;focus
