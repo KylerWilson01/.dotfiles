@@ -108,7 +108,7 @@ set $DISCORD "3: DISCORD"
 set $GAME "4: GAME"
 set $VM "5: VM"
 set $SLACK "6: SLACK"
-set $WS7 "7: EXT"
+set $NOTES "7: NOTES"
 set $WS8 "8: EXT"
 set $WS9 "9: EXT"
 set $MUSIC "10: MUSIC"
@@ -119,7 +119,7 @@ workspace $GAME output $firstMonitor
 workspace $DISCORD output $firstMonitor
 workspace $VM output $firstMonitor
 workspace $SLACK output $firstMonitor
-workspace $WS7 output $firstMonitor
+workspace $NOTES output $firstMonitor
 workspace $WS8 output $secondMonitor
 workspace $WS9 output $thirdMonitor
 workspace $MUSIC output $firstMonitor
@@ -131,7 +131,7 @@ bindsym $mod+3 workspace $DISCORD
 bindsym $mod+4 workspace $GAME
 bindsym $mod+5 workspace $VM
 bindsym $mod+6 workspace $SLACK
-bindsym $mod+7 workspace $WS7
+bindsym $mod+7 workspace $NOTES
 bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $MUSIC
@@ -139,11 +139,11 @@ bindsym $mod+0 workspace $MUSIC
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WWW; workspace $WWW
 bindsym $mod+Shift+2 move container to workspace $TERMINAL; workspace $TERMINAL
-bindsym $mod+Shift+3 move container to workspace $GAME; workspace $GAME
-bindsym $mod+Shift+4 move container to workspace $DISCORD; workspace $DISCORD
+bindsym $mod+Shift+3 move container to workspace $DISCORD; workspace $DISCORD
+bindsym $mod+Shift+4 move container to workspace $GAME; workspace $GAME
 bindsym $mod+Shift+5 move container to workspace $VM; workspace $VM
 bindsym $mod+Shift+6 move container to workspace $SLACK; workspace $SLACK
-bindsym $mod+Shift+7 move container to workspace $WS7; workspace $WS7
+bindsym $mod+Shift+7 move container to workspace $NOTES; workspace $NOTES
 bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $MUSIC; workspace $MUSIC
@@ -283,11 +283,13 @@ for_window [class="Steam"]              move to workspace $GAME, focus
 for_window [class="Lutris"]             move to workspace $GAME, focus
 
 # Workspace 4 chat related
-for_window [class="discord|Discord"]            move to workspace $DISCORD, focus
+for_window [class="discord|Discord"]    move to workspace $DISCORD, focus
 for_window [class="Slack"]              move to workspace $SLACK, focus
+for_window [class="Virt-manager"]       move to workspace $VM, focus
 
 # Workspace 10 music related
 for_window [class="Spotify"]            move to workspace $MUSIC, focus
+for_window [class="obsidian"]           move to workspace $NOTES, focus
 
 
 
@@ -348,7 +350,7 @@ exec --no-startup-id volumeicon
 exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpapers/lolth.jpg &
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpapers/skull-gruv.jpg &
 
 #Polybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -385,6 +387,8 @@ bindsym control+Shift+s exec --no-startup-id steam;focus
 bindsym $meh+d exec --no-startup-id discord;focus
 bindsym $meh+s exec --no-startup-id slack;focus
 bindsym $hyper+l exec --no-startup-id lutris;focus
+bindsym $hyper+o exec --no-startup-id obsidian;focus
+bindsym $meh+v exec --no-startup-id virt-manager;focus
 
 #workspace 4 related
 bindsym $mod+F4 exec --no-startup-id gimp;focus
@@ -588,6 +592,17 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 #####################################################################################################################
 #####################################################################################################################
 
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $orange #d65d0e
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
 bar {
 
     height 25
@@ -649,19 +664,16 @@ bar {
     ##START THEMING BAR
     #Theme name : ArcoLinux Default
 
-    # i3 bar colors
-    # variable border background Text
-
     colors {
-        background #2F2F2F
-        statusline #eeeeee
-        separator  #666666
+        background $darkgray
+        statusline $gray
+        separator  $red
 
         # colorclass           border  backgr. text
-        focused_workspace     #a9a9a9 #5f676a #eeeeee
-        active_workspace      #a9a9a9 #5f676a #eeeeee
-        inactive_workspace    #a9a9a9 #222222 #a9a9a9
-        urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+        focused_workspace     $aqua $bg $aqua
+        active_workspace      $aqua $bg $aqua
+        inactive_workspace    $gray $bg $gray
+        urgent_workspace      $red $darkgray $red
         }
 
     }
@@ -672,13 +684,13 @@ bar {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+    client.focused          $bg     $aqua $gray   $aqua   
     client.unfocused        #222222 #222222 #aaaaaa #222222
     client.focused_inactive #222222 #222222 #a9a9a9 #222222
     client.placeholder      #222222 #222222 #aaaaaa #222222
     client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 
-    client.background       #242424
+    client.background       $bg
 
     ##STOP THEMING WM
 
