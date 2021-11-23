@@ -31,6 +31,7 @@ lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlig
 augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.jsx,*.tsx set filetype=typescriptreact
+    autocmd BufNewFile,BufRead *.scss set filetype=scss
 augroup END
 
 let mapleader = ' ' 
