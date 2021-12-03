@@ -38,6 +38,7 @@ let mapleader = ' '
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap <leader>e :Ex<CR>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
