@@ -42,3 +42,4 @@ nnoremap <leader>e :Ex<CR>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim
