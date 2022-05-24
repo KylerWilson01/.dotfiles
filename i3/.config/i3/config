@@ -30,7 +30,7 @@
 set $mod Mod4
 set $meh Mod1+shift+control
 set $hyper Mod1+shift+control+Mod4
-
+set $web firefox
 
 
 #####################################################################################################################
@@ -56,21 +56,11 @@ bindsym $mod+f fullscreen toggle
 # orientation for new workspaces
 default_orientation horizontal
 
-# split in horizontal orientation
-bindsym $mod+n split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
 # change container layout (stacked, tabbed, toggle split)
 # qwerty/azerty issue for letter z
-bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+e layout splith
 
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -98,8 +88,7 @@ exec --no-startup-id xrandr --output HDMI2 --right-of HDMI1 --auto
 
 # my current setup
 set $firstMonitor DP-4
-set $secondMonitor DP-2
-set $thirdMonitor DP-1
+set $secondMonitor HDMI-0
 
 # workspace sets
 set $WWW "1: WWW"
@@ -109,7 +98,7 @@ set $GAME "4: GAME"
 set $VM "5: VM"
 set $SLACK "6: SLACK"
 set $NOTES "7: NOTES"
-set $WS8 "8: EXT"
+set $WS8 "8: MOVIES"
 set $WS9 "9: EXT"
 set $MUSIC "10: MUSIC"
 
@@ -121,32 +110,32 @@ workspace $VM output $firstMonitor
 workspace $SLACK output $firstMonitor
 workspace $NOTES output $firstMonitor
 workspace $WS8 output $secondMonitor
-workspace $WS9 output $thirdMonitor
+workspace $WS9 output $firstMonitor
 workspace $MUSIC output $firstMonitor
 
 # switch to workspace
-bindsym $mod+1 workspace $WWW
-bindsym $mod+2 workspace $TERMINAL
-bindsym $mod+3 workspace $DISCORD
-bindsym $mod+4 workspace $GAME
-bindsym $mod+5 workspace $VM
-bindsym $mod+6 workspace $SLACK
-bindsym $mod+7 workspace $NOTES
-bindsym $mod+8 workspace $WS8
+bindsym $mod+w workspace $WWW
+bindsym $mod+t workspace $TERMINAL
+bindsym $mod+d workspace $DISCORD
+bindsym $mod+g workspace $GAME
+bindsym $mod+v workspace $VM
+bindsym $mod+s workspace $SLACK
+bindsym $mod+n workspace $NOTES
+bindsym $mod+i workspace $WS8
 bindsym $mod+9 workspace $WS9
-bindsym $mod+0 workspace $MUSIC
+bindsym $mod+m workspace $MUSIC
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WWW; workspace $WWW
-bindsym $mod+Shift+2 move container to workspace $TERMINAL; workspace $TERMINAL
-bindsym $mod+Shift+3 move container to workspace $DISCORD; workspace $DISCORD
-bindsym $mod+Shift+4 move container to workspace $GAME; workspace $GAME
-bindsym $mod+Shift+5 move container to workspace $VM; workspace $VM
-bindsym $mod+Shift+6 move container to workspace $SLACK; workspace $SLACK
-bindsym $mod+Shift+7 move container to workspace $NOTES; workspace $NOTES
-bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
+bindsym $hyper+w move container to workspace $WWW; workspace $WWW
+bindsym $hyper+t move container to workspace $TERMINAL; workspace $TERMINAL
+bindsym $hyper+d move container to workspace $DISCORD; workspace $DISCORD
+bindsym $hyper+g move container to workspace $GAME; workspace $GAME
+bindsym $hyper+v move container to workspace $VM; workspace $VM
+bindsym $hyper+s move container to workspace $SLACK; workspace $SLACK
+bindsym $hyper+n move container to workspace $NOTES; workspace $NOTES
+bindsym $hyper+i move container to workspace $WS8; workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
-bindsym $mod+Shift+0 move container to workspace $MUSIC; workspace $MUSIC
+bindsym $hyper+m move container to workspace $MUSIC; workspace $MUSIC
 
 
 
@@ -189,8 +178,8 @@ mode "$mode_system" {
 
 
 # ArcoLinux Logout
-bindsym $mod+Shift+e exec --no-startup-id arcolinux-logout
-bindsym $mod+X exec --no-startup-id arcolinux-logout
+bindsym $mod+Shift+e exec --no-startup-id archlinux-logout
+bindsym $mod+X exec --no-startup-id archlinux-logout
 
 
 #####################################################################################################################
@@ -261,7 +250,7 @@ bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # choose your font
-font pango:Noto Mono Regular 13
+font pango:Fira Code Regular 13
 
 
 #####################################################################################################################
@@ -276,7 +265,7 @@ for_window [class="firefox"]            move to workspace $WWW, focus
 for_window [class="Brave"]              move to workspace $WWW, focus
 
 # Workspace 2 code related
-for_window [class="Alacritty"]          move to workspace $TERMINAL, focus
+for_window [class="kitty"]              move to workspace $TERMINAL, focus
 
 # Workspace 3 game related
 for_window [class="Steam"]              move to workspace $GAME, focus
@@ -290,6 +279,7 @@ for_window [class="Virt-manager"]       move to workspace $VM, focus
 # Workspace 10 music related
 for_window [class="Spotify"]            move to workspace $MUSIC, focus
 for_window [class="obsidian"]           move to workspace $NOTES, focus
+for_window [class="okular"]             move to workspace $NOTES, focus
 
 
 
@@ -375,19 +365,18 @@ bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
 bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
 
 # terminal
-bindsym $mod+Return exec --no-startup-id alacritty;focus
+bindsym $mod+Return exec --no-startup-id kitty;focus
 
 #arcolinux-logout
 bindsym control+mod1+k exec --no-startup-id arcolinux-logout
 bindsym control+mod1+l exec --no-startup-id arcolinux-logout
 
-bindsym $meh+f exec --no-startup-id firefox;focus
-bindsym $meh+g exec --no-startup-id brave;focus
-bindsym control+Shift+s exec --no-startup-id steam;focus
-bindsym $meh+d exec --no-startup-id discord;focus
+bindsym $meh+w exec --no-startup-id $web;focus
+bindsym $meh+g exec --no-startup-id steam;focus
+bindsym $meh+d exec --no-startup-id discord --no-sandbox;focus
 bindsym $meh+s exec --no-startup-id slack;focus
-bindsym $hyper+l exec --no-startup-id lutris;focus
-bindsym $hyper+o exec --no-startup-id obsidian;focus
+bindsym $meh+l exec --no-startup-id lutris;focus
+bindsym $meh+o exec --no-startup-id obsidian;focus
 bindsym $meh+v exec --no-startup-id virt-manager;focus
 
 #workspace 4 related
@@ -401,7 +390,7 @@ for_window [class="Thunar"] focus
 bindsym $mod+Shift+Return exec --no-startup-id thunar;focus
 
 #workspace 10 related
-bindsym control+mod1+s exec --no-startup-id spotify;focus
+bindsym $meh+m exec --no-startup-id spotify;focus
 
 
 #####################################################################################################################

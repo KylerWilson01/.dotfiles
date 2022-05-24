@@ -1,5 +1,5 @@
-let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_transparent_bg = 0.8
 highlight ColorColumn ctermbg=0 guibg=grey
 hi SignColumn guibg=none

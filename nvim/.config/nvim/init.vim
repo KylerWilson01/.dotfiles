@@ -25,7 +25,7 @@ Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
 
-lua require("lsp")
+lua require("philbert/lsp")
 lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 augroup SyntaxSettings
@@ -38,8 +38,10 @@ let mapleader = ' '
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap <c-d> <c-d>zzzv
+nnoremap <c-u> <c-u>zzzv
 nnoremap <leader>e :Ex<CR>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
