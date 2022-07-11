@@ -22,6 +22,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
+Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -32,6 +34,8 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.jsx,*.tsx set filetype=typescriptreact
     autocmd BufNewFile,BufRead *.scss set filetype=scss
+    autocmd FileType go autocmd BufWritePre <buffer> silent GoFmt
+    autocmd FileType go autocmd BufWritePre <buffer> silent GoImport
 augroup END
 
 let mapleader = ' ' 

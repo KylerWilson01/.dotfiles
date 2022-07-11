@@ -280,6 +280,7 @@ for_window [class="Virt-manager"]       move to workspace $VM, focus
 for_window [class="Spotify"]            move to workspace $MUSIC, focus
 for_window [class="obsidian"]           move to workspace $NOTES, focus
 for_window [class="okular"]             move to workspace $NOTES, focus
+for_window [class="superproductivity"]  move to workspace $NOTES, focus
 
 
 
@@ -294,8 +295,6 @@ exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
 exec_always --no-startup-id autotiling
-
-for_window [class="Spotify"] focus
 
 # MPV SERVER
 exec play-with-mpv
@@ -342,8 +341,8 @@ exec --no-startup-id conky -c ~/.config/i3/system-overview
 #feh sets wallpaper
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpapers/skull-gruv.jpg &
 
-#Polybar
-#exec_always --no-startup-id ~/.config/polybar/launch.sh &
+#superproductivity
+exec superproductivity
 
 #####################################################################################################################
 #################                                 system applications                               #################
@@ -378,6 +377,7 @@ bindsym $meh+s exec --no-startup-id slack;focus
 bindsym $meh+l exec --no-startup-id lutris;focus
 bindsym $meh+o exec --no-startup-id obsidian;focus
 bindsym $meh+v exec --no-startup-id virt-manager;focus
+bindsym $meh+n exec --no-startup-id superproductivity;focus
 
 #workspace 4 related
 bindsym $mod+F4 exec --no-startup-id gimp;focus
