@@ -6,7 +6,8 @@ set wildignore+=**/.git/*
 call plug#begin("~/.local/share/nvim/site/autoload")
 
 " GROOOOOOOOOVVVVVVYYYY
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+Plug 'rose-pine/neovim'
 
 " telescope requirements
 Plug 'nvim-telescope/telescope.nvim'

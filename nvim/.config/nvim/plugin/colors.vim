@@ -1,6 +1,5 @@
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_transparent_bg = 0.8
+colorscheme rose-pine
+
 highlight ColorColumn ctermbg=0 guibg=grey
 hi SignColumn guibg=none
 hi CursorLineNR guibg=None

@@ -144,7 +144,7 @@ bindsym $hyper+m move container to workspace $MUSIC; workspace $MUSIC
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191724' -nf '#e0def4' -sb '#31748f' -sf '#e0def4' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 # start rofi full
 bindsym $mod+F11 exec --no-startup-id rofi -show drun -fullscreen -font "Noto Sans 13"
@@ -192,8 +192,6 @@ bindsym $mod+Shift+r restart
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
-
 
 
 #####################################################################################################################
@@ -290,11 +288,10 @@ for_window [class="superproductivity"]  move to workspace $NOTES, focus
 
 # USER APPLICATIONS TO START AT BOOT
 
-# ArcoLinux Welcome App
-exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
-
 # Autotiling
 exec_always --no-startup-id autotiling
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 # MPV SERVER
 exec play-with-mpv
@@ -311,7 +308,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id pamac-tray
 
 # bluetooth
-#exec --no-startup-id blueberry-tray
+exec --no-startup-id blueberry-tray
 
 # network
 exec --no-startup-id nm-applet
@@ -336,13 +333,13 @@ exec --no-startup-id volumeicon
 #exec --no-startup-id xfce4-clipman
 
 #Conky
-exec --no-startup-id conky -c ~/.config/i3/system-overview
+#exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 #feh sets wallpaper
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpapers/skull-gruv.jpg &
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpapers/astroids.jpg &
 
 #superproductivity
-exec superproductivity
+#exec superproductivity
 
 #####################################################################################################################
 #################                                 system applications                               #################
@@ -427,46 +424,9 @@ for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
 for_window [title="^Terminator Preferences$"] floating enable
 
-
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [window_role="setup"] floating enable
-
-
-#####################################################################################################################
-#################                          variety for your wallpapers                              #################
-#####################################################################################################################
-
-
-#Variety keybindings mod1 = ALT
-# trash wallpaper
-bindsym mod1+t exec --no-startup-id variety -t
-# next wallpaper
-bindsym mod1+n exec --no-startup-id variety -n
-bindsym mod1+Right exec --no-startup-id variety -n
-# previous wallpaper
-bindsym mod1+p exec --no-startup-id variety -p
-bindsym mod1+Left exec --no-startup-id variety -p
-# favorite wallpaper
-bindsym mod1+f exec --no-startup-id variety -f
-# pause wallpaper
-bindsym mod1+Up exec --no-startup-id variety --pause
-# resume wallpaper
-bindsym mod1+Down exec --no-startup-id variety --resume
-
-
-#####################################################################################################################
-#################                          variety with pywal for your wallpapers                   #################
-#####################################################################################################################
-
-# next wallpaper
-bindsym mod1+Shift+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-# previous wallpaper
-bindsym mod1+Shift+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-# trash wallpaper
-bindsym mod1+Shift+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
-# Update Wallpaper
-bindsym mod1+Shift+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)
 
 
 #####################################################################################################################
@@ -581,91 +541,91 @@ bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 #####################################################################################################################
 #####################################################################################################################
 
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $orange #d65d0e
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
+set $base #191724
+set $love #eb6f92
+set $rose #ebbcba
+set $gold #f6c177
+set $pine #31748f
+set $iris #c4a7e7
+set $foam #9ccfd8
+set $surface #1f1d2e
+set $overlay #26233a
+set $text #e0def4
 
-bar {
-
-    height 25
-    workspace_buttons yes
-    font pango:Noto Sans 14
-
-    #position top
-    position bottom
-
-    #system icons
-    #tray_output none
-    #tray_output $firstMonitor
-    #tray_output $secondMonitor
-
-
-
-    # OPTION 1 : i3status
-
-    # type status_command i3status without the config file and
-    # you will get the standard i3status bar
-    # Second one is the standard statusbar with my personal settings
-
-    #status_command i3status
-    status_command i3status -c ~/.config/i3/i3status.conf
-
-
-
-    # OPTION 2 : i3blocks
-
-    # https://github.com/vivien/i3blocks
-    # another way to provide text in the statusbar
-    # put hastag in front if not installed
-
-    #status_command i3blocks
-    #status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    #status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-    #status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-    #status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-
-    # OPTION 3 : conky
-
-    # You can also replace the istatus bar with a conky
-    # start-conky-i3statusbar.sh is started and conky will follow
-    # documentation : https://i3wm.org/docs/user-contributed/conky-i3bar.html
-    # conky configuration is in conky-i3statusbar
-
-    #status_command ~/.config/i3/start-conky-i3statusbar.sh
-
-
-
-    # OPTION 4 : polybar
-
-    # polybar is launched elsewhere - search for the word
-    # from the opening of the "bar {...}" till the end has to go or hashtagged out
-    # in order for the system trayicons to show up in polybar
-
-
-    ##START THEMING BAR
-    #Theme name : ArcoLinux Default
-
-    colors {
-        background $darkgray
-        statusline $gray
-        separator  $red
-
-        # colorclass           border  backgr. text
-        focused_workspace     $aqua $bg $aqua
-        active_workspace      $aqua $bg $aqua
-        inactive_workspace    $gray $bg $gray
-        urgent_workspace      $red $darkgray $red
-        }
-
-    }
+#bar {
+#
+#    height 25
+#    workspace_buttons yes
+#    font pango:Noto Sans 14
+#
+#    #position top
+#    position bottom
+#
+#    #system icons
+#    #tray_output none
+#    #tray_output $firstMonitor
+#    #tray_output $secondMonitor
+#
+#
+#
+#    # OPTION 1 : i3status
+#
+#    # type status_command i3status without the config file and
+#    # you will get the standard i3status bar
+#    # Second one is the standard statusbar with my personal settings
+#
+#    #status_command i3status
+#    status_command i3status -c ~/.config/i3/i3status.conf
+#
+#
+#
+#    # OPTION 2 : i3blocks
+#
+#    # https://github.com/vivien/i3blocks
+#    # another way to provide text in the statusbar
+#    # put hastag in front if not installed
+#
+#    #status_command i3blocks
+#    #status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#    #status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+#    #status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+#    #status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+#
+#
+#    # OPTION 3 : conky
+#
+#    # You can also replace the istatus bar with a conky
+#    # start-conky-i3statusbar.sh is started and conky will follow
+#    # documentation : https://i3wm.org/docs/user-contributed/conky-i3bar.html
+#    # conky configuration is in conky-i3statusbar
+#
+#    #status_command ~/.config/i3/start-conky-i3statusbar.sh
+#
+#
+#
+#    # OPTION 4 : polybar
+#
+#    # polybar is launched elsewhere - search for the word
+#    # from the opening of the "bar {...}" till the end has to go or hashtagged out
+#    # in order for the system trayicons to show up in polybar
+#
+#
+#    ##START THEMING BAR
+#    #Theme name : ArcoLinux Default
+#
+#    colors {
+#        background $darkgray
+#        statusline $gray
+#        separator  $red
+#
+#        # colorclass           border  backgr. text
+#        focused_workspace     $aqua $bg $aqua
+#        active_workspace      $aqua $bg $aqua
+#        inactive_workspace    $gray $bg $gray
+#        urgent_workspace      $red $darkgray $red
+#        }
+#
+#}
     ##STOP THEMING BAR
 
     ##START THEMING WM
@@ -673,7 +633,7 @@ bar {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          $bg     $aqua $gray   $aqua   
+    client.focused          $base   $pine   $text   $pine   
     client.unfocused        #222222 #222222 #aaaaaa #222222
     client.focused_inactive #222222 #222222 #a9a9a9 #222222
     client.placeholder      #222222 #222222 #aaaaaa #222222
