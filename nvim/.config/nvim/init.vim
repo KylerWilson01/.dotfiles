@@ -25,7 +25,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
-Plug 'akinsho/flutter-tools.nvim'
 
 " cmp
 Plug 'hrsh7th/nvim-cmp'
