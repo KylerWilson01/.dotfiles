@@ -1,3 +1,4 @@
+lua require'rose-pine'.setup({disable_italics = true})
 colorscheme rose-pine
 
 highlight ColorColumn ctermbg=0 guibg=grey
