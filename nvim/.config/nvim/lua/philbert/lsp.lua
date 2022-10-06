@@ -1,4 +1,5 @@
 local nvim_lsp = require"lspconfig"
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 nvim_lsp.tsserver.setup { 
     on_attach=on_attach, 
@@ -18,7 +19,13 @@ nvim_lsp.gopls.setup {
 	},
 }
 
-nvim_lsp.rust_analyzer.setup {
+nvim_lsp['tsserver'].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+nvim_lsp['rust_analyzer'].setup {
+    capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         ["rust-analyzer"] = {
