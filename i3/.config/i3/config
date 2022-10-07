@@ -369,7 +369,7 @@ bindsym control+mod1+l exec --no-startup-id arcolinux-logout
 
 bindsym $meh+w exec --no-startup-id $web;focus
 bindsym $meh+g exec --no-startup-id steam;focus
-bindsym $meh+d exec --no-startup-id discord --no-sandbox;focus
+bindsym $meh+d exec --no-startup-id "discord --no-sandbox";focus
 bindsym $meh+s exec --no-startup-id slack;focus
 bindsym $meh+l exec --no-startup-id lutris;focus
 bindsym $meh+o exec --no-startup-id obsidian;focus

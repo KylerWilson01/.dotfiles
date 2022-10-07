@@ -5,8 +5,6 @@ set wildignore+=**/.git/*
 
 call plug#begin("~/.local/share/nvim/site/autoload")
 
-" GROOOOOOOOOVVVVVVYYYY
-" Plug 'gruvbox-community/gruvbox'
 Plug 'rose-pine/neovim'
 
 " telescope requirements
@@ -22,13 +20,22 @@ Plug 'nvim-treesitter/playground'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'hrsh7th/nvim-compe'
 Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 call plug#end()
 
 lua require("philbert/lsp")
+lua require("philbert/cmp")
 lua require'nvim-treesitter.configs'.setup { indent = { enable = true }, highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 augroup SyntaxSettings
