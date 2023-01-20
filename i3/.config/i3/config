@@ -279,8 +279,7 @@ for_window [class="Spotify"]            move to workspace $MUSIC, focus
 for_window [class="obsidian"]           move to workspace $NOTES, focus
 for_window [class="okular"]             move to workspace $NOTES, focus
 for_window [class="superproductivity"]  move to workspace $NOTES, focus
-
-
+for_window [class="gnome-pomodoro"]     move to workspace $NOTES, focus
 
 #####################################################################################################################
 #################           autostart   -    execute applications at boot time                      #################
@@ -375,6 +374,7 @@ bindsym $meh+l exec --no-startup-id lutris;focus
 bindsym $meh+o exec --no-startup-id obsidian;focus
 bindsym $meh+v exec --no-startup-id virt-manager;focus
 bindsym $meh+n exec --no-startup-id superproductivity;focus
+bindsym $meh+p exec --no-startup-id gnome-pomodoro;focus
 
 #workspace 4 related
 bindsym $mod+F4 exec --no-startup-id gimp;focus

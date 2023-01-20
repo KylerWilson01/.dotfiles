@@ -45,6 +45,7 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.jsx,*.tsx set filetype=typescriptreact
     autocmd BufNewFile,BufRead *.scss set filetype=scss
+    autocmd BufWritePre * undojoin | Neoformat
 augroup END
 
 let mapleader = ' ' 

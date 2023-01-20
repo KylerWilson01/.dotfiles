@@ -9,6 +9,7 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.clangd.setup { on_attach=on_attach }
 
 nvim_lsp.gopls.setup { 
+    on_attach=on_attach, 
     capabilities = capabilities,
     cmd = { "gopls" },
 	settings = {
