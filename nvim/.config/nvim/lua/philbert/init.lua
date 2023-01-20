@@ -1,6 +1,7 @@
 require'philbert.lsp'
 require'philbert.cmp'
 require'philbert.telescope'
+require'neogit'.setup{}
 
 require'nvim-treesitter.configs'.setup { 
     indent = { enable = true }, 

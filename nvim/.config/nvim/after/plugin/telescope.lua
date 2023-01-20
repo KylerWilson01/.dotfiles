@@ -6,9 +6,11 @@ nnoremap('<C-t>', function()
 end)
 
 nnoremap('<Leader>tf', function() 
-    builtin.find_files()
+    require'telescope'.extensions.flutter.commands()
 end)
 
 nnoremap('<Leader>tb', function() 
     builtin.buffers()
 end)
+
+nnoremap('<leader>tt', ':TodoTelescope<CR>')
