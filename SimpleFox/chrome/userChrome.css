@@ -30,9 +30,9 @@ by Miguel Avila
 /* want to show the URL Bar    */
 /*─────────────────────────────*/
 
-/* .urlbarView {
+.urlbarView {
   display: none !important;
-} */
+}
 
 /*─────────────────────────────*/
 
@@ -113,6 +113,7 @@ by Miguel Avila
 }
 
 .tab-background {
+  background-color: var(--sfwindow) !important;
   border-right: 0px solid rgba(0, 0, 0, 0) !important;
   margin-left: -4px !important;
 }

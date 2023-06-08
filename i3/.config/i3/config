@@ -143,16 +143,8 @@ bindsym $hyper+m move container to workspace $MUSIC; workspace $MUSIC
 #################                          3 menu's in arcolinux                                     #################
 #####################################################################################################################
 
-# start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191724' -nf '#e0def4' -sb '#31748f' -sf '#e0def4' -fn 'NotoMonoRegular:bold:pixelsize=14'
-
-# start rofi full
-bindsym $mod+F11 exec --no-startup-id rofi -show drun -fullscreen -font "Noto Sans 13"
-
 # start rofi small
-bindsym $mod+F12 exec --no-startup-id rofi -show drun -font "Noto Sans 13"
-
-
+bindsym $meh+r exec --no-startup-id rofi -show drun -font "FiraCode 24"
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
