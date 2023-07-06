@@ -259,6 +259,7 @@ for_window [class="kitty"]              move to workspace $TERMINAL, focus
 
 # Workspace 3 game related
 for_window [class="Steam"]              move to workspace $GAME, focus
+for_window [class="steam"]              move to workspace $GAME, focus
 for_window [class="Lutris"]             move to workspace $GAME, focus
 
 # Workspace 4 chat related
