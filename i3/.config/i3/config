@@ -144,7 +144,7 @@ bindsym $hyper+m move container to workspace $MUSIC; workspace $MUSIC
 #####################################################################################################################
 
 # start rofi small
-bindsym $meh+r exec --no-startup-id rofi -show drun -font "FiraCode 24"
+bindsym $meh+r exec --no-startup-id rofi -show drun -font "Hack Nerd Font Mono 24"
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -240,7 +240,7 @@ bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # choose your font
-font pango:Fira Code Regular 13
+font pango:Hack Nerd Font Mono Regular 13
 
 
 #####################################################################################################################
@@ -256,14 +256,14 @@ for_window [class="Brave"]              move to workspace $WWW, focus
 
 # Workspace 2 code related
 for_window [class="kitty"]              move to workspace $TERMINAL, focus
+for_window [class="[Aa]lacritty"]       move to workspace $TERMINAL, focus
 
 # Workspace 3 game related
-for_window [class="Steam"]              move to workspace $GAME, focus
-for_window [class="steam"]              move to workspace $GAME, focus
+for_window [class="[Ss]team"]           move to workspace $GAME, focus
 for_window [class="Lutris"]             move to workspace $GAME, focus
 
 # Workspace 4 chat related
-for_window [class="discord|Discord"]    move to workspace $DISCORD, focus
+for_window [class="[Dd]iscord"]         move to workspace $DISCORD, focus
 for_window [class="Slack"]              move to workspace $SLACK, focus
 for_window [class="Virt-manager"]       move to workspace $VM, focus
 
@@ -353,7 +353,7 @@ bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
 bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
 
 # terminal
-bindsym $mod+Return exec --no-startup-id kitty;focus
+bindsym $mod+Return exec --no-startup-id alacritty;focus
 
 #arcolinux-logout
 bindsym control+mod1+k exec --no-startup-id arcolinux-logout
@@ -364,7 +364,7 @@ bindsym $meh+g exec --no-startup-id steam;focus
 bindsym $meh+d exec --no-startup-id "discord --no-sandbox";focus
 bindsym $meh+s exec --no-startup-id slack;focus
 bindsym $meh+l exec --no-startup-id lutris;focus
-bindsym $meh+o exec --no-startup-id obsidian;focus
+bindsym $meh+o exec --no-startup-id ~/.local/bin/obsidian;focus
 bindsym $meh+v exec --no-startup-id virt-manager;focus
 bindsym $meh+n exec --no-startup-id superproductivity;focus
 bindsym $meh+p exec --no-startup-id gnome-pomodoro;focus
