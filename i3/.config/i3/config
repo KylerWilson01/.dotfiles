@@ -31,6 +31,7 @@ set $mod Mod4
 set $meh Mod1+shift+control
 set $hyper Mod1+shift+control+Mod4
 set $web firefox
+set $term alacritty
 
 
 #####################################################################################################################
@@ -91,16 +92,15 @@ set $firstMonitor DP-4
 set $secondMonitor HDMI-0
 
 # workspace sets
-set $WWW "1: WWW"
-set $TERMINAL "2: EDIT"
-set $DISCORD "3: DISCORD"
-set $GAME "4: GAME"
-set $VM "5: VM"
-set $SLACK "6: SLACK"
-set $NOTES "7: NOTES"
-set $WS8 "8: MOVIES"
-set $WS9 "9: EXT"
-set $MUSIC "10: MUSIC"
+set $WWW "WWW"
+set $TERMINAL "EDIT"
+set $DISCORD "DISCORD"
+set $GAME "GAME"
+set $VM "VM"
+set $SLACK "SLACK"
+set $NOTES "NOTES"
+set $TIMER "TIMER"
+set $MUSIC "MUSIC"
 
 workspace $WWW output $firstMonitor
 workspace $TERMINAL output $firstMonitor
@@ -109,8 +109,7 @@ workspace $DISCORD output $firstMonitor
 workspace $VM output $firstMonitor
 workspace $SLACK output $firstMonitor
 workspace $NOTES output $firstMonitor
-workspace $WS8 output $secondMonitor
-workspace $WS9 output $firstMonitor
+workspace $TIMER output $firstMonitor
 workspace $MUSIC output $firstMonitor
 
 # switch to workspace
@@ -121,8 +120,7 @@ bindsym $mod+g workspace $GAME
 bindsym $mod+v workspace $VM
 bindsym $mod+s workspace $SLACK
 bindsym $mod+n workspace $NOTES
-bindsym $mod+i workspace $WS8
-bindsym $mod+9 workspace $WS9
+bindsym $mod+p workspace $TIMER
 bindsym $mod+m workspace $MUSIC
 
 # move focused container to workspace
@@ -133,8 +131,7 @@ bindsym $hyper+g move container to workspace $GAME; workspace $GAME
 bindsym $hyper+v move container to workspace $VM; workspace $VM
 bindsym $hyper+s move container to workspace $SLACK; workspace $SLACK
 bindsym $hyper+n move container to workspace $NOTES; workspace $NOTES
-bindsym $hyper+i move container to workspace $WS8; workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
+bindsym $hyper+p move container to workspace $TIMER; workspace $TIMER
 bindsym $hyper+m move container to workspace $MUSIC; workspace $MUSIC
 
 
@@ -251,28 +248,25 @@ font pango:Hack Nerd Font Mono Regular 13
 # you can find the class with the program xprop
 
 # Workspace 1 browser related
-for_window [class="firefox"]            move to workspace $WWW, focus
-for_window [class="Brave"]              move to workspace $WWW, focus
+assign [class=$web]             $WWW
 
 # Workspace 2 code related
-for_window [class="kitty"]              move to workspace $TERMINAL, focus
-for_window [class="[Aa]lacritty"]       move to workspace $TERMINAL, focus
+assign [class="(?i)alacritty"]  $TERMINAL
 
 # Workspace 3 game related
-for_window [class="[Ss]team"]           move to workspace $GAME, focus
-for_window [class="Lutris"]             move to workspace $GAME, focus
+assign [class="(?i)steam"]      $GAME
+assign [class="Lutris"]         $GAME
 
 # Workspace 4 chat related
-for_window [class="[Dd]iscord"]         move to workspace $DISCORD, focus
-for_window [class="Slack"]              move to workspace $SLACK, focus
-for_window [class="Virt-manager"]       move to workspace $VM, focus
+assign [class="(?i)discord"]    $DISCORD
+assign [class="Slack"]          $SLACK
+assign [class="Virt-manager"]   $VM
 
 # Workspace 10 music related
-for_window [class="Spotify"]            move to workspace $MUSIC, focus
-for_window [class="obsidian"]           move to workspace $NOTES, focus
-for_window [class="okular"]             move to workspace $NOTES, focus
-for_window [class="superproductivity"]  move to workspace $NOTES, focus
-for_window [class="gnome-pomodoro"]     move to workspace $NOTES, focus
+assign [class="Spotify"]        $MUSIC
+assign [class="obsidian"]       $NOTES
+assign [class="okular"]         $NOTES
+assign [class="(?i)pomodoro"]   $TIMER
 
 #####################################################################################################################
 #################           autostart   -    execute applications at boot time                      #################
@@ -353,20 +347,19 @@ bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
 bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
 
 # terminal
-bindsym $mod+Return exec --no-startup-id alacritty;focus
+bindsym $mod+Return exec --no-startup-id $term;focus
 
 #arcolinux-logout
 bindsym control+mod1+k exec --no-startup-id arcolinux-logout
 bindsym control+mod1+l exec --no-startup-id arcolinux-logout
 
 bindsym $meh+w exec --no-startup-id $web;focus
-bindsym $meh+g exec --no-startup-id steam;focus, fullscreen disable
+bindsym $meh+g exec --no-startup-id steam;focus
 bindsym $meh+d exec --no-startup-id "discord --no-sandbox";focus
 bindsym $meh+s exec --no-startup-id slack;focus
 bindsym $meh+l exec --no-startup-id lutris;focus
 bindsym $meh+o exec --no-startup-id ~/.local/bin/obsidian;focus
 bindsym $meh+v exec --no-startup-id virt-manager;focus
-bindsym $meh+n exec --no-startup-id superproductivity;focus
 bindsym $meh+p exec --no-startup-id gnome-pomodoro;focus
 
 #workspace 4 related
@@ -467,7 +460,14 @@ popup_during_fullscreen smart
 # want it
 
 
-for_window [class="^.*"] border pixel 2, fullscreen enable
+for_window [workspace=$WWW]             border pixel 2, fullscreen enable
+for_window [workspace=$TERMINAL]        border pixel 2, fullscreen enable
+for_window [workspace=$DISCORD]         border pixel 2, fullscreen enable
+for_window [workspace=$SLACK]           border pixel 2, fullscreen enable
+for_window [workspace=$NOTES]           border pixel 2, fullscreen enable
+for_window [workspace=$TIMER]           border pixel 2, fullscreen enable
+for_window [workspace=$MUSIC]           border pixel 2, fullscreen enable
+
 gaps inner 5
 gaps outer 5
 #smart_gaps on
