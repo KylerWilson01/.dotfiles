@@ -465,7 +465,6 @@ for_window [workspace=$TERMINAL]        border pixel 2, fullscreen enable
 for_window [workspace=$DISCORD]         border pixel 2, fullscreen enable
 for_window [workspace=$SLACK]           border pixel 2, fullscreen enable
 for_window [workspace=$NOTES]           border pixel 2, fullscreen enable
-for_window [workspace=$TIMER]           border pixel 2, fullscreen enable
 for_window [workspace=$MUSIC]           border pixel 2, fullscreen enable
 
 gaps inner 5
