@@ -3,11 +3,10 @@ if status is-interactive
     fish_add_path /home/kylerw/.local/bin
 
     alias vim="nvim"
-    alias cd="z"
     alias ls="ll"
 
     set -Ux EXA_STANDARD_OPTIONS --group --header --group-directories-first --all --icons
 
     starship init fish | source
-    zoxide init fish | source
+    zoxide init --cmd cd fish | source
 end
