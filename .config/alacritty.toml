@@ -76,7 +76,7 @@ text = "#1E1E2E"
 TERM = "xterm-256color"
 
 [font]
-size = 20.0
+size = 26.0
 
 [font.bold]
 family = "Hack Nerd Font Mono"
@@ -96,7 +96,7 @@ key = "Key6"
 mods = "Control"
 
 [shell]
-program = "/bin/bash"
+program = "/usr/bin/fish"
 
 [window]
 decorations = "full"
