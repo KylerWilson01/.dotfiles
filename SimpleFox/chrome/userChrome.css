@@ -21,6 +21,7 @@ by Miguel Avila
 :root {
   --sfwindow: #191724;
   --sfsecondary: #1f1d2e;
+  --text: #cdd6f4;
 }
 
 /* Urlbar View */
@@ -173,7 +174,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 .urlbarView-url {
-  color: #dedede !important;
+  color: green !important;
 }
 
 /* Disable elements  */
