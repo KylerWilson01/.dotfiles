@@ -27,6 +27,7 @@ if status is-interactive
         set -l val $argv[1]
 
         if test -n "$val" -a (pomo_options $val)
+            clear
             echo $val | lolcat
             timer (pomo_options $val)m
             spd-say "'$val' session done"
