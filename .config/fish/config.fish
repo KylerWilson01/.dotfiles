@@ -8,6 +8,7 @@ if status is-interactive
     fish_add_path -g ~/.dotnet ~/.dotnet/tools
     fish_add_path -g ~/.local/bin
     fish_add_path -g /usr/local/go/bin
+    fish_add_path -g ~/go/bin
     fish_add_path -g ~/.cargo/bin
 
     set --universal nvm_default_version 18
