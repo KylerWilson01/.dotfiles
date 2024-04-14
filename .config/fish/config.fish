@@ -10,6 +10,7 @@ if status is-interactive
     fish_add_path -g /usr/local/go/bin
     fish_add_path -g ~/go/bin
     fish_add_path -g ~/.cargo/bin
+    set -Ux LD_LIBRARY_PATH /usr/lib/libmpc.so
 
     set --universal nvm_default_version 18
 

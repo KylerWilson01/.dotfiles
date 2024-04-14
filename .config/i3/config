@@ -75,7 +75,8 @@ bindsym $mod+g workspace $ws3
 bindsym $mod+v workspace $ws4
 bindsym $mod+c workspace $ws5
 bindsym $mod+m workspace $ws6
-bindsym $mod+e workspace $ws7
+bindsym $mod+o workspace $ws7
+bindsym $mod+p workspace $ws8
 
 bindsym $mod+Shift+Mod1+t move container to workspace $ws1
 bindsym $mod+Shift+Mod1+w move container to workspace $ws2
@@ -83,7 +84,8 @@ bindsym $mod+Shift+Mod1+g move container to workspace $ws3
 bindsym $mod+Shift+Mod1+v move container to workspace $ws4
 bindsym $mod+Shift+Mod1+c move container to workspace $ws5
 bindsym $mod+Shift+Mod1+m move container to workspace $ws6
-bindsym $mod+Shift+Mod1+e move container to workspace $ws7
+bindsym $mod+Shift+Mod1+o move container to workspace $ws7
+bindsym $mod+Shift+Mod1+p move container to workspace $ws8
 
 ######################################
 # keybindings for different actions: #
@@ -96,9 +98,11 @@ bindsym $mod+Mod1+t exec $terminal
 bindsym $mod+q kill
 
 bindsym $mod+Mod1+w exec firefox
-bindsym $mod+Mod1+d exec discord
-bindsym $mod+Mod1+s exec spotify
+bindsym $mod+Mod1+c exec discord
+bindsym $mod+Mod1+m exec spotify
 bindsym $mod+Mod1+g exec steam
+bindsym $mod+Mod1+o exec obsidian
+bindsym $mod+Mod1+p exec okular
 # bindsym $mod+Mod1+v exec virt-manager
 
 # exit-menu
@@ -194,7 +198,7 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
+#bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym Print exec --no-startup-id flameshot gui
@@ -214,10 +218,10 @@ set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws7 "7:"
+set $ws8 "8:󰈦"
+set $ws9 "9:"
+set $ws10 "10:"
 
 # bind program to workspace and focus to them on startup:
 assign [class="(?i)alacritty"] $ws1
@@ -226,6 +230,8 @@ assign [class="(?i)steam"] $ws3
 assign [class="(?i)virt-manager"] $ws4
 assign [class="(?i)discord"] $ws5
 assign [class="(?i)spotify"] $ws6
+assign [class="(?i)obsidian"] $ws7
+assign [class="(?i)okular"] $ws8
 
 ##############
 # compositor #
