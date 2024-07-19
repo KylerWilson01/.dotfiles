@@ -1,0 +1,9 @@
+[09:53:00 2024-07-19] FETCHING Version 2.36.15
+[09:53:00 2024-07-19] CREATING /home/kyler/.spicetify
+[09:53:00 2024-07-19] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.36.15/spicetify-2.36.15-linux-amd64.tar.gz
+[09:53:01 2024-07-19] EXTRACTING /home/kyler/.spicetify/spicetify.tar.gz
+[09:53:01 2024-07-19] SETTING EXECUTABLE PERMISSIONS TO /home/kyler/.spicetify/spicetify
+[09:53:01 2024-07-19] REMOVING /home/kyler/.spicetify/spicetify.tar.gz
+[09:53:01 2024-07-19] APPENDING /home/kyler/.spicetify to PATH in /home/kyler/.config/fish/config.fish
+[09:53:01 2024-07-19] spicetify v2.36.15 was installed successfully to /home/kyler/.spicetify
+[09:53:01 2024-07-19] Run 'spicetify --help' to get started

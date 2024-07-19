@@ -106,7 +106,7 @@ bindsym $mod+Mod1+p exec okular
 # bindsym $mod+Mod1+v exec virt-manager
 
 # exit-menu
-bindsym $mod+x exec --no-startup-id ~/.config/i3/scripts/powermenu
+bindsym $mod+x exec --no-startup-id $HOME/.config/rofi/bin/powermenu
 
 # Lock the system
 # lock with a picture:
@@ -434,8 +434,9 @@ strip_workspace_numbers yes
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+Mod1+Return exec --no-startup-id rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+Mod1+Return exec $HOME/.config/rofi/bin/launcher  
+
+##,runner,powermenu,screenshot}
 
 #bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
