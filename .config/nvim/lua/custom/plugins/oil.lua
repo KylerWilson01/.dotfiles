@@ -6,7 +6,7 @@ return {
       view_options = {
         -- Show files and directories that start with "."
         show_hidden = true,
-        is_always_hidden = function(name, bufnr)
+        is_always_hidden = function(name, _)
           if name == '.git' or name == 'node_modules' or name == '.vscode' then
             return true
           end
