@@ -4,6 +4,7 @@ if status is-interactive
 
     alias vim="nvim"
     alias ls="ll"
+    alias fzfjq = ""
 
     fish_add_path -g ~/.dotnet ~/.dotnet/tools
     fish_add_path -g ~/.local/bin
