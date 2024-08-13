@@ -4,7 +4,10 @@ if status is-interactive
 
     alias vim="nvim"
     alias ls="ll"
-    alias fzfjq = ""
+
+    function fjq
+        command hurl $argv[1] | jq -C $argv[2] | fzf --preview "jq"
+    end
 
     fish_add_path -g ~/.dotnet ~/.dotnet/tools
     fish_add_path -g ~/.local/bin
@@ -43,6 +46,8 @@ if status is-interactive
 
     starship init fish | source
     zoxide init --cmd cd fish | source
+
+    set fzf_preview_dir_cmd eza --all --color=always
 end
 
 fish_add_path /home/kyler/.spicetify
