@@ -5,7 +5,7 @@ format = """
 palette = "catppuccin_mocha"
 
 [directory]
-read_only = " "
+read_only = " "
 
 [docker_context]
 symbol = " "
@@ -15,7 +15,7 @@ symbol = " "
 format = '\[[$symbol$branch]($style)\]'
 
 [package]
-symbol = " "
+symbol = " "
 format = '\[[$symbol$version]($style)\]'
 
 [python]
@@ -27,7 +27,7 @@ symbol = " "
 format = '[$symbol]($style)'
 
 [nodejs]
-symbol = " "
+symbol = " "
 format = '[$symbol]($style)'
 detect_extensions = ["js", "mjs", "cjs", "ts", "tsx", "jsx"]
 

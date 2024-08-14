@@ -27,7 +27,7 @@ font pango: Hack Nerd Font 16
 
 # set the mod key to the winkey:
 set $mod Mod4
-set $terminal alacritty
+set $terminal wezterm
 
 #####################
 # workspace layout: #
@@ -224,7 +224,7 @@ set $ws9 "9:"
 set $ws10 "10:"
 
 # bind program to workspace and focus to them on startup:
-assign [class="(?i)alacritty"] $ws1
+assign [class="(?i)wezterm"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="(?i)steam"] $ws3
 assign [class="(?i)virt-manager"] $ws4
