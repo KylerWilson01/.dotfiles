@@ -6,8 +6,7 @@ if status is-interactive
     alias ls="ll"
 
     function fjq
-        # Doesn't work
-        command jq -c $argv[1] | fzf --preview "printf %s {} | jq" -e
+        command jq -c $argv[1] | fzf --preview "printf %s {} | jq" -e | jq
     end
 
     fish_add_path -g ~/.dotnet ~/.dotnet/tools
