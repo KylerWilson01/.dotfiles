@@ -15,7 +15,13 @@ if status is-interactive
     fish_add_path -g ~/go/bin
     fish_add_path -g ~/.cargo/bin
     fish_add_path -g /opt/mssql-tools18/bin/
+
+    set -Ux GTK_IM_MODULE fcitx
+    set -Ux QT_IM_MODULE fcitx
+    set -Ux XMODIFIERS @im=fcitx
     set -Ux LD_LIBRARY_PATH /usr/lib/libmpc.so
+
+    set -gx EDITOR nvim
 
     set --universal nvm_default_version 18
 
