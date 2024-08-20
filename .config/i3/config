@@ -231,6 +231,7 @@ assign [class="(?i)virt-manager"] $ws4
 assign [class="(?i)discord"] $ws5
 assign [class="(?i)spotify"] $ws6
 assign [class="(?i)obsidian"] $ws7
+assign [class="(?i)anki"] $ws7
 assign [class="(?i)okular"] $ws8
 
 ##############
