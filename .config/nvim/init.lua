@@ -74,7 +74,7 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter',
     },
     config = function()
-      require('refactoring').setup()
+      require('refactoring').setup {}
     end,
   },
   'nvim-lua/popup.nvim',
@@ -414,7 +414,8 @@ local servers = {
     },
   },
   pyright = {},
-  tsserver = {},
+  ts_ls = {},
+  ast_grep = {},
   svelte = {},
   cssls = {},
   omnisharp = {},
