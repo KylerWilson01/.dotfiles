@@ -97,7 +97,7 @@ bindsym $mod+Mod1+t exec $terminal
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+Mod1+w exec firefox
+bindsym $mod+Mod1+w exec zen-browser
 bindsym $mod+Mod1+c exec discord
 bindsym $mod+Mod1+m exec spotify
 bindsym $mod+Mod1+g exec steam
@@ -225,7 +225,7 @@ set $ws10 "10:"
 
 # bind program to workspace and focus to them on startup:
 assign [class="(?i)wezterm"] $ws1
-assign [class="(?i)firefox"] $ws2
+assign [class="(?i)zen"] $ws2
 assign [class="(?i)steam"] $ws3
 assign [class="(?i)virt-manager"] $ws4
 assign [class="(?i)discord"] $ws5
