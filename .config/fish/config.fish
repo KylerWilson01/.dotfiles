@@ -54,6 +54,10 @@ if status is-interactive
     zoxide init --cmd cd fish | source
 
     set fzf_preview_dir_cmd eza --all --color=always
+
+    if test -e ~/.config/fish/work.fish
+        source ~/.config/fish/work.fish
+    end
 end
 
 fish_add_path /home/kyler/.spicetify
