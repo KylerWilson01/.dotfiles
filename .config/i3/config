@@ -106,7 +106,8 @@ bindsym $mod+Mod1+p exec okular
 # bindsym $mod+Mod1+v exec virt-manager
 
 # exit-menu
-bindsym $mod+x exec --no-startup-id $HOME/.config/rofi/bin/powermenu
+#bindsym $mod+x exec --no-startup-id $HOME/.config/rofi/bin/powermenu
+bindsym $mod+x exec --no-startup-id $HOME/.config/i3/scripts/powermenu
 
 # Lock the system
 # lock with a picture:
