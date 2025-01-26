@@ -5,7 +5,7 @@ config.default_prog = { "/usr/bin/fish", "-l" }
 
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("Hack Nerd Font Mono")
-config.window_background_opacity = 0.95
+config.window_background_opacity = 1
 config.font_size = 24.0
 
 config.enable_tab_bar = false
