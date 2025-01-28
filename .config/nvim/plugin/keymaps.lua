@@ -10,3 +10,14 @@ vim.keymap.set('n', '<C-j>', '<cmd> TmuxNavigateDown<CR>', { silent = true })
 vim.keymap.set('n', '<C-k>', '<cmd> TmuxNavigateUp<CR>', { silent = true })
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { silent = true })
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
