@@ -208,7 +208,7 @@ require('lazy').setup({
       require('nvim-ts-autotag').setup()
     end,
   },
-  { import = "plugins" }
+  { import = 'plugins' },
 }, {})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
