@@ -122,7 +122,6 @@ require('lazy').setup({
   },
   {
     'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       vim.keymap.set('n', '<leader>xx', function()
         require('trouble').toggle()
@@ -180,9 +179,6 @@ require('lazy').setup({
       scope = { enabled = false },
     },
   },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
