@@ -24,9 +24,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
   {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
