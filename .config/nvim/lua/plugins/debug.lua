@@ -7,9 +7,7 @@
 -- kickstart.nvim and not kitchen-sink.nvim ;)
 
 return {
-  -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
     {
@@ -32,6 +30,7 @@ return {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
       automatic_setup = true,
+      automatic_installation = true,
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
@@ -62,6 +61,8 @@ return {
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      mappings = {},
+      expand_lines = true,
       controls = {
         icons = {
           pause = '⏸',
@@ -75,6 +76,37 @@ return {
           disconnect = '⏏',
         },
       },
+
+      force_buffers = false,
+      element_mappings = {
+        scopes = {
+          edit = 'l',
+        },
+      },
+      layouts = {
+        {
+          elements = {
+            'scopes',
+            'breakpoints',
+            'stacks',
+            'watches',
+          },
+          size = 80,
+          position = 'left',
+        },
+        {
+          elements = { 'repl', 'console' },
+          size = 0.25,
+          position = 'bottom',
+        },
+      },
+      render = {
+        max_value_lines = 3,
+        sort_variables = function(a, b)
+          return a.name < b.name
+        end,
+      },
+      floating = { max_width = 0.9, max_height = 0.5, border = vim.g.border_chars },
     }
 
     dap.adapters.coreclr = {

@@ -1,0 +1,4 @@
+--max-columns-preview
+--glob=!.git/*
+--smart-case
+--hidden

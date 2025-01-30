@@ -20,7 +20,7 @@ if status is-interactive
     set -Ux QT_IM_MODULE fcitx
     set -Ux XMODIFIERS @im=fcitx
     set -Ux LD_LIBRARY_PATH /usr/lib/libmpc.so
-
+    set -Ux RIPGREP_CONFIG_PATH ~/.ripgreprc
     set -gx EDITOR nvim
 
     set --universal nvm_default_version 18
