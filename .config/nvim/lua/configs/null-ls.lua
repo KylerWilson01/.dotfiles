@@ -3,8 +3,6 @@ local null_ls = require 'null-ls'
 
 local opts = {
   sources = {
-    null_ls.builtins.code_actions.refactoring,
-
     require 'none-ls.code_actions.eslint_d',
     require 'none-ls.diagnostics.eslint_d',
     null_ls.builtins.formatting.prettierd.with {
@@ -35,7 +33,6 @@ local opts = {
 
     null_ls.builtins.diagnostics.revive,
     null_ls.builtins.formatting.gofumpt,
-    null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.golines,
     null_ls.builtins.code_actions.gomodifytags,
 
