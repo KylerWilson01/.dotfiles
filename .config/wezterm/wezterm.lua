@@ -12,8 +12,8 @@ config.enable_tab_bar = false
 config.enable_scroll_bar = false
 
 config.window_padding = {
-	left = "15%",
-	right = "15%",
+	left = "5%",
+	right = "5%",
 	top = 0,
 	bottom = 0,
 }
