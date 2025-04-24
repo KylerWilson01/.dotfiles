@@ -1,5 +1,12 @@
 local wezterm = require("wezterm")
+local mux = wezterm.mux
 local config = {}
+
+wezterm.on("gui-startup", function(window)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	local gui_window = window:gui_window()
+	gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
+end)
 
 config.default_prog = { "/usr/bin/fish", "-l" }
 
