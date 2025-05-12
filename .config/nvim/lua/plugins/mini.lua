@@ -35,7 +35,7 @@ return {
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
     }
-    vim.keymap.set('n', '<leader>tst', function()
+    vim.keymap.set('n', '<leader>st', function()
       extra.pickers.hipatterns { { scope = 'all' } }
     end, { desc = '[S]earch [T]ags' })
   end,

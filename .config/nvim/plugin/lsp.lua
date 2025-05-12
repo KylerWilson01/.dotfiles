@@ -44,6 +44,7 @@ local servers = {
   gopls = {
     settings = {
       gopls = {
+        gofumpt = true,
         completeUnimported = true,
         usePlaceholders = true,
         staticcheck = true,
@@ -53,9 +54,7 @@ local servers = {
       },
     },
   },
-  pyright = {},
   ts_ls = {},
-  ast_grep = {},
   svelte = {},
   cssls = {},
   omnisharp = {},

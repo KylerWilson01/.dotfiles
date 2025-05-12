@@ -11,7 +11,7 @@ return {
     dashboard = { enabled = true },
     explorer = { enabled = true },
     indent = { enabled = true },
-    picker = { enabled = true, layout = { preset = 'telescope' } },
+    picker = { enabled = true, layout = { preset = 'telescope' }, hidden = true },
     notifier = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
@@ -46,7 +46,7 @@ return {
     {
       '<leader>ff',
       function()
-        Snacks.picker.files()
+        Snacks.picker.files { hidden = true }
       end,
       desc = 'Find Files',
     },

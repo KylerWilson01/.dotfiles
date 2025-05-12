@@ -31,7 +31,7 @@ local opts = {
     require 'none-ls.diagnostics.flake8',
     require 'none-ls.diagnostics.ruff',
 
-    null_ls.builtins.diagnostics.revive,
+    null_ls.builtins.diagnostics.golangci_lint,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.golines,
     null_ls.builtins.code_actions.gomodifytags,
@@ -39,6 +39,8 @@ local opts = {
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.csharpier,
     null_ls.builtins.diagnostics.stylelint,
+
+    null_ls.builtins.code_actions.refactoring,
   },
   on_attach = function(client, bufnr)
     if client.supports_method 'textDocument/formatting' then
@@ -51,7 +53,7 @@ local opts = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format { bufnr = bufnr }
+          vim.lsp.buf.format {}
         end,
       })
     end
