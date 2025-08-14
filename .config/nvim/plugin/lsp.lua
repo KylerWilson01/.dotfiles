@@ -19,7 +19,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  --nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
@@ -83,7 +83,7 @@ mason_lspconfig.setup {
 for name, server in pairs(servers) do
   lspconfig[name].setup {
     capabilities = capabilities,
-    on_attach = on_attach,
+    on_attach = on_attach(),
     settings = server,
     filetypes = (server or {}).filetypes,
   }
