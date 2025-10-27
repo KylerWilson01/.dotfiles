@@ -25,8 +25,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -34,18 +34,18 @@ require('lazy').setup({
     },
     keys = {
       {
-        "<leader>?",
+        '<leader>?',
         function()
-          require("which-key").show({ global = false })
+          require('which-key').show { global = false }
         end,
-        desc = "Buffer Local Keymaps (which-key)",
+        desc = 'Buffer Local Keymaps (which-key)',
       },
     },
   },
   {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
-      { 'tpope/vim-dadbod',                     lazy = true },
+      { 'tpope/vim-dadbod', lazy = true },
       { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
     cmd = {
