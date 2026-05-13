@@ -81,16 +81,6 @@ require('lazy').setup({
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
-  {
-    'ThePrimeagen/refactoring.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
-    },
-    config = function()
-      require('refactoring').setup {}
-    end,
-  },
   'nvim-lua/popup.nvim',
   'nvim-treesitter/nvim-treesitter-context',
   {
@@ -188,15 +178,6 @@ require('lazy').setup({
   },
 
   -- Fuzzy Finder (files, lsp, etc)
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
-  'nvim-treesitter/playground',
   'christoomey/vim-tmux-navigator',
   {
     'windwp/nvim-ts-autotag',
