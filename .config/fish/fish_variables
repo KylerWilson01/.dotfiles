@@ -84,4 +84,4 @@ SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
 SETUVAR fish_user_paths:/home/kyler/\x2espicetify\x1e/home/kylerw/\x2elocal/bin\x1e/home/kyler/\x2efzf/bin
-SETUVAR nvm_default_version:18
+SETUVAR nvm_default_version:24

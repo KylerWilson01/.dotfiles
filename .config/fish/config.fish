@@ -23,7 +23,7 @@ if status is-interactive
     set -Ux RIPGREP_CONFIG_PATH ~/.ripgreprc
     set -gx EDITOR nvim
 
-    set --universal nvm_default_version 18
+    set --universal nvm_default_version 24
 
     set -Ux EXA_STANDARD_OPTIONS --group --header --group-directories-first --all --icons
 
