@@ -4,7 +4,6 @@ return {
   ft = 'markdown',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'hrsh7th/nvim-cmp',
     'nvim-telescope/telescope.nvim',
     'epwalsh/pomo.nvim',
   },
@@ -26,7 +25,6 @@ return {
       new_notes_location = 'notes_subdir',
       notes_subdir = '05 - Fleeting',
       completion = {
-        nvim_cmp = true,
         min_chars = 2,
       },
       workspaces = {
